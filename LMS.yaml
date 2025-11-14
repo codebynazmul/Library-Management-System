@@ -1,0 +1,39 @@
+name: Build & Test (Library Management System - C Project)
+
+
+jobs:
+  build:
+    name: Compile, Validate, and Document
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Install GCC
+        run: sudo apt-get update && sudo apt-get install -y gcc
+
+      - name: Compile Project
+        run: gcc library.c -o library_app
+
+      - name: Functional Test
+        run: echo "4" | ./library_app
+
+      - name: Learning Outcomes
+        run: |
+          echo "##  Learning Outcomes"
+          echo "- File handling in C"
+          echo "- 2-D strings and structured record storage"
+          echo "- Modular programming with reusable functions"
+          echo "- Cross-platform console interface"
+      
+      - name: Developer Info
+        run: |
+          echo "##  Developer Info"
+          echo "**Developed by:** MD NAZMUL HASAN"
+          echo "Software Engineering Student, Daffodil International University"
+          
+      - name: License Details
+        run: |
+          echo "##  License"
+          echo "This project is licensed under the MIT License — free to use and modify."
